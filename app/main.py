@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-from config import origins
-
+from app.config import origins
 
 
 load_dotenv()

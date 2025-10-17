@@ -9,5 +9,4 @@ prod_frontendURL = os.environ["FRONTEND_URL"]
 origins = [
     "http://localhost:3000",
     prod_frontendURL   
-     
 ]
