@@ -5,6 +5,11 @@ from app.config import origins
 from pinecone import Pinecone
 import os
 from pathlib import Path
+
+
+from app.routes.upload import router as uploadRouter
+from app.routes.upload import router as queryRouter
+
 load_dotenv()
 
 app = FastAPI()
@@ -36,3 +41,6 @@ index = pc.Index(INDEX_NAME)
 
 documentDirectory = Path("documents")
 documentDirectory.mkdir()
+
+app.include_router(uploadRouter, prefix='/upload')
+app.include_router(queryRouter, prefix='/ask')
