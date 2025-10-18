@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 from app.routes.upload import router as uploadRouter
-from app.routes.upload import router as queryRouter
+from app.routes.query import router as queryRouter
 
 load_dotenv()
 
@@ -40,7 +40,7 @@ if INDEX_NAME not in [i["name"] for i in pc.list_indexes()]:
 index = pc.Index(INDEX_NAME)
 
 documentDirectory = Path("documents")
-documentDirectory.mkdir()
+documentDirectory.mkdir(exist_ok=True)
 
 app.include_router(uploadRouter, prefix='/upload')
 app.include_router(queryRouter, prefix='/ask')
