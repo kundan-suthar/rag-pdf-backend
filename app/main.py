@@ -6,6 +6,9 @@ from pinecone import Pinecone
 import os
 from pathlib import Path
 
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ['LANGCHAIN_PROJECT'] = os.getenv('LANGCHAIN_PROJECT')
+
 
 from app.routes.upload import router as uploadRouter
 from app.routes.query import router as queryRouter
