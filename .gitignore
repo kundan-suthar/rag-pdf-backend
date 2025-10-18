@@ -62,3 +62,4 @@ Thumbs.db
 *.pid
 instance/
 .webassets-cache
+documents
